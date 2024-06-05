@@ -1,6 +1,6 @@
 services:
   nginx-proxy:
-    build: ./nginx
+    image: tugceerkaner/nginx-proxy:latest
     restart: always
     volumes:
       - ./nginx/default.conf:/tmp/default.conf
@@ -17,7 +17,7 @@ services:
     #   retries: 3
     command: /app/start.sh
   flask-app:
-    build: ./flask
+    image: tugceerkaner/flask-app:latest
     restart: always
     ports:
       - '8000:8000'
